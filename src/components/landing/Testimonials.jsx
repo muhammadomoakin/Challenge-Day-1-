@@ -1,4 +1,5 @@
 import Card from "../ui/Card";
+import Reveal from "../ui/Reveal";
 
 const testimonials = [
   {
@@ -44,30 +45,33 @@ const Testimonials = () => {
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-            {testimonials.map((testimonial) => (
-              <div
+            {testimonials.map((testimonial, index) => (
+              <Reveal
                 key={testimonial.author.handle}
-                className="pt-8 sm:inline-block sm:w-full sm:px-4"
+                delay={index * 0.1}
+                width="auto"
               >
-                <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700/50 p-8 text-sm leading-6">
-                  <blockquote className="text-slate-300">
-                    <p>{`"${testimonial.body}"`}</p>
-                  </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
-                      className="h-10 w-10 rounded-full bg-slate-800"
-                      src={testimonial.author.imageUrl}
-                      alt=""
-                    />
-                    <div>
-                      <div className="font-semibold text-white">
-                        {testimonial.author.name}
+                <div className="pt-8 sm:inline-block sm:w-full sm:px-4">
+                  <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700/50 p-8 text-sm leading-6">
+                    <blockquote className="text-slate-300">
+                      <p>{`"${testimonial.body}"`}</p>
+                    </blockquote>
+                    <figcaption className="mt-6 flex items-center gap-x-4">
+                      <img
+                        className="h-10 w-10 rounded-full bg-slate-800"
+                        src={testimonial.author.imageUrl}
+                        alt=""
+                      />
+                      <div>
+                        <div className="font-semibold text-white">
+                          {testimonial.author.name}
+                        </div>
+                        <div className="text-slate-400">{`@${testimonial.author.handle}`}</div>
                       </div>
-                      <div className="text-slate-400">{`@${testimonial.author.handle}`}</div>
-                    </div>
-                  </figcaption>
-                </Card>
-              </div>
+                    </figcaption>
+                  </Card>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

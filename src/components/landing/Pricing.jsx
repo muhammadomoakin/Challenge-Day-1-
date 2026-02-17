@@ -1,5 +1,6 @@
 import React from "react";
 import PricingCard from "../ui/PricingCard";
+import Reveal from "../ui/Reveal";
 
 const tiers = [
   {
@@ -70,7 +71,9 @@ const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {tiers.map((tier, index) => (
-            <PricingCard key={index} {...tier} />
+            <Reveal key={index} delay={index * 0.15}>
+              <PricingCard {...tier} />
+            </Reveal>
           ))}
         </div>
       </div>

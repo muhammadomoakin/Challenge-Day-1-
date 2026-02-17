@@ -4,6 +4,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import ValueCard from "../ui/ValueCard";
+import Reveal from "../ui/Reveal";
 
 const values = [
   {
@@ -39,13 +40,14 @@ const Values = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {values.map((value) => (
-            <ValueCard
-              key={value.name}
-              title={value.name}
-              description={value.description}
-              icon={value.icon}
-            />
+          {values.map((value, index) => (
+            <Reveal key={value.name} delay={index * 0.1}>
+              <ValueCard
+                title={value.name}
+                description={value.description}
+                icon={value.icon}
+              />
+            </Reveal>
           ))}
         </div>
       </div>

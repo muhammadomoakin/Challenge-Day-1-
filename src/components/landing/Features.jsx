@@ -1,4 +1,5 @@
 import FeatureCard from "../ui/FeatureCard";
+import Reveal from "../ui/Reveal";
 import {
   BoltIcon,
   UsersIcon,
@@ -51,13 +52,14 @@ const Features = () => {
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <div className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-4">
-            {features.map((feature) => (
-              <FeatureCard
-                key={feature.name}
-                title={feature.name}
-                description={feature.description}
-                icon={feature.icon}
-              />
+            {features.map((feature, index) => (
+              <Reveal key={feature.name} delay={index * 0.1}>
+                <FeatureCard
+                  title={feature.name}
+                  description={feature.description}
+                  icon={feature.icon}
+                />
+              </Reveal>
             ))}
           </div>
         </div>
