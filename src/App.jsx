@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/landing/Hero";
 import Features from "./components/landing/Features";
+import Pricing from "./components/landing/Pricing";
 import Footer from "./components/layout/Footer";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <main>
         <Hero />
         <Features />
-        {/* Additional sections could be added here */}
+        <Pricing />
       </main>
       <Footer />
     </div>
