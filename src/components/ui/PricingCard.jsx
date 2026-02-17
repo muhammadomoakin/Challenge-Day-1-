@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
 const PricingCard = ({ name, price, description, features, cta, popular }) => {
