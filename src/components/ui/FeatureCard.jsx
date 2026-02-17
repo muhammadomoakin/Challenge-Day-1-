@@ -1,4 +1,3 @@
-import React from "react";
 // eslint-disable-next-line no-unused-vars
 const FeatureCard = ({ icon: Icon, title, description }) => {
   return (

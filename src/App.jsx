@@ -1,21 +1,16 @@
 import React from "react";
-import Navbar from "./components/layout/Navbar";
-import Hero from "./components/landing/Hero";
-import Features from "./components/landing/Features";
-import Pricing from "./components/landing/Pricing";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
-    <div className="bg-slate-900 min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Pricing />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </Router>
   );
 }
 

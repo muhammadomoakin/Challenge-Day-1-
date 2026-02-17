@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const navigation = {
   solutions: [
@@ -8,13 +9,13 @@ const navigation = {
     { name: "Insights", href: "#" },
   ],
   support: [
-    { name: "Pricing", href: "#" },
+    { name: "Pricing", href: "/#pricing" },
     { name: "Documentation", href: "#" },
     { name: "Guides", href: "#" },
     { name: "API Status", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
+    { name: "About", href: "/about" },
     { name: "Blog", href: "#" },
     { name: "Jobs", href: "#" },
     { name: "Press", href: "#" },
@@ -95,12 +96,21 @@ const Footer = () => {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm leading-6 text-slate-400 hover:text-white"
-                      >
-                        {item.name}
-                      </a>
+                      {item.href.startsWith("/") ? (
+                        <Link
+                          to={item.href}
+                          className="text-sm leading-6 text-slate-400 hover:text-white"
+                        >
+                          {item.name}
+                        </Link>
+                      ) : (
+                        <a
+                          href={item.href}
+                          className="text-sm leading-6 text-slate-400 hover:text-white"
+                        >
+                          {item.name}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
