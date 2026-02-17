@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     @apply bg-slate-900 text-slate-50 antialiased;

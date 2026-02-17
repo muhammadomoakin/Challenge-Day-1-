@@ -1,12 +1,16 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import Button from "./Button";
 
 const PricingCard = ({ name, price, description, features, cta, popular }) => {
   return (
-    <div
-      className={`relative flex flex-col p-8 bg-slate-800/50 backdrop-blur-sm border rounded-3xl transition-all duration-300 hover:shadow-2xl ${
+    <motion.div
+      whileHover={{ y: -10, transition: { duration: 0.3 } }}
+      className={`relative flex flex-col p-8 bg-slate-800/50 backdrop-blur-sm border rounded-3xl transition-colors duration-300 ${
         popular
-          ? "border-blue-500 shadow-blue-500/20 z-10 scale-105 hover:scale-110"
-          : "border-slate-700 hover:border-blue-500/30 hover:shadow-blue-500/10 hover:scale-105"
+          ? "border-blue-500 shadow-2xl shadow-blue-500/20 z-10"
+          : "border-slate-700 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10"
       }`}
     >
       {popular && (
@@ -37,16 +41,10 @@ const PricingCard = ({ name, price, description, features, cta, popular }) => {
         ))}
       </ul>
 
-      <button
-        className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-          popular
-            ? "bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25"
-            : "bg-slate-700 hover:bg-slate-600 text-white hover:text-blue-200"
-        }`}
-      >
+      <Button variant={popular ? "primary" : "secondary"} className="w-full">
         {cta}
-      </button>
-    </div>
+      </Button>
+    </motion.div>
   );
 };
 
