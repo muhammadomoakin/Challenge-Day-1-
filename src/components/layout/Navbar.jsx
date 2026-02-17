@@ -20,11 +20,13 @@ const Navbar = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <Link
-              to="/"
-              className="-m-1.5 p-1.5 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-300 hover:to-indigo-400 transition-all duration-300"
-            >
-              FlowDesk
+            <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white font-bold text-lg">F</span>
+              </div>
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-300 hover:to-indigo-400 transition-all duration-300">
+                FlowDesk
+              </span>
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -87,10 +89,15 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
               <Link
                 to="/"
-                className="-m-1.5 p-1.5 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500"
+                className="-m-1.5 p-1.5 flex items-center gap-2 group"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                FlowDesk
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-lg">F</span>
+                </div>
+                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">
+                  FlowDesk
+                </span>
               </Link>
               <button
                 type="button"
